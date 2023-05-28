@@ -1,0 +1,94 @@
+{
+    "developers": ["<YOUR_DISCORD_ID>"],
+    "client": {
+        "id": "<DISCORD_BOT_ID>",
+        "token": "<DISCORD_BOT_TOKEN>",
+        "intents": [
+            "Guilds",
+            "GuildMessages",
+            "GuildMessageReactions",
+            "DirectMessages",
+            "DirectMessageReactions",
+            "MessageContent"
+        ],
+        "partials": ["Message", "Channel", "Reaction"],
+        "caches": {}
+    },
+    "database": {
+        "type": "mysql",
+        "host": "localhost",
+        "port": 3306,
+        "database": "<DATABASE_NAME>",
+        "username": "<DATABASE_USERNAME>",
+        "password": "<DATABASE_PASSWORD>"
+    },
+    "api": {
+        "port": 8080,
+        "secret": "00000000-0000-0000-0000-000000000000"
+    },
+    "sharding": {
+        "spawnDelay": 5,
+        "spawnTimeout": 300,
+        "serversPerShard": 1000
+    },
+    "clustering": {
+        "enabled": false,
+        "shardCount": 16,
+        "callbackUrl": "http://localhost:8080/",
+        "masterApi": {
+            "url": "http://localhost:5000/",
+            "token": "00000000-0000-0000-0000-000000000000"
+        }
+    },
+    "jobs": {
+        "updateServerCount": {
+            "schedule": "0 */10 * * * *",
+            "log": false
+        }
+    },
+    "rateLimiting": {
+        "commands": {
+            "amount": 10,
+            "interval": 30
+        },
+        "buttons": {
+            "amount": 10,
+            "interval": 30
+        },
+        "triggers": {
+            "amount": 10,
+            "interval": 30
+        },
+        "reactions": {
+            "amount": 10,
+            "interval": 30
+        }
+    },
+    "experience": {
+        "promptExpireTime": 120
+    },
+    "validation": {
+        "timeResults": {
+            "countMax": 5
+        },
+        "timeZones": {
+            "countMax": 10
+        },
+        "bots": {
+            "countMax": 20
+        },
+        "timeZone": {
+            "lengthMin": 6
+        },
+        "timeResultText": {
+            "lengthMax": 50,
+            "blacklist": ["/^(at|from)?(\\s*)(\\d+)(\\s*)((to|-)(\\s*)(\\d+))?$/i"]
+        }
+    },
+    "logging": {
+        "pretty": true,
+        "rateLimit": {
+            "minTimeout": 30
+        }
+    }
+}

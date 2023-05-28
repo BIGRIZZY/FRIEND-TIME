@@ -1,0 +1,979 @@
+{
+    "data": {
+        "displayEmbeds": {
+            "welcome": {
+                "title": "Wir danken dir von ganzem Herzen, dass du {{COM:bot.name}} benutzt!",
+                "description": ["{{REF:bot.description}}"],
+                "fields": [
+                    {
+                        "name": "Wichtig {{REF:fields.commands}}",
+                        "value": ["**/{{COM:chatCommands.help}}** - {{REF:commandDescs.help}}"]
+                    },
+                    {
+                        "name": "{{REF:fields.links}}",
+                        "value": ["{{REF:links.docsEmbed}}", "{{REF:links.supportEmbed}}"]
+                    }
+                ]
+            },
+            "commands": {
+                "title": "{{COM:bot.name}} - Commands",
+                "fields": [
+                    {
+                        "name": "Benutzer {{REF:fields.commands}}",
+                        "value": [
+                            "**/{{COM:chatCommands.set}} {{COM:subCommands.me}}** - {{REF:commandDescs.setMe}}",
+                            "**/{{COM:chatCommands.set}} {{COM:subCommands.user}} *<{{COM:arguments.user}}>*** - {{REF:commandDescs.setUser}}",
+                            "**/{{COM:chatCommands.me}} {{COM:subCommands.view}}** - {{REF:commandDescs.meView}}",
+                            "**/{{COM:chatCommands.me}} {{COM:subCommands.edit}} *<{{COM:arguments.setting}}>*** - {{REF:commandDescs.meEdit}}",
+                            "**/{{COM:chatCommands.me}} {{COM:subCommands.remove}}** - {{REF:commandDescs.meRemove}}",
+                            "**/{{COM:chatCommands.time}} {{COM:subCommands.server}}** - {{REF:commandDescs.timeServer}}",
+                            "**/{{COM:chatCommands.time}} {{COM:subCommands.user}} *<{{COM:arguments.user}}>*** - {{REF:commandDescs.timeUser}}",
+                            "**/{{COM:chatCommands.time}} {{COM:subCommands.zone}} *<{{COM:arguments.zone}}>*** - {{REF:commandDescs.timeZone}}",
+                            "**/{{COM:chatCommands.map}}** - {{REF:commandDescs.map}}"
+                        ]
+                    },
+                    {
+                        "name": "Administrations {{REF:fields.commands}}",
+                        "value": [
+                            "**/{{COM:chatCommands.setup}}** - {{REF:commandDescs.setup}}",
+                            "**/{{COM:chatCommands.server}} {{COM:subCommands.view}}** - {{REF:commandDescs.serverView}}",
+                            "**/{{COM:chatCommands.server}} {{COM:subCommands.edit}} *<{{COM:arguments.setting}}>*** - {{REF:commandDescs.serverEdit}}",
+                            "**/{{COM:chatCommands.server}} {{COM:subCommands.remove}}** - {{REF:commandDescs.serverRemove}}",
+                            "**/{{COM:chatCommands.list}} {{COM:subCommands.view}}** - {{REF:commandDescs.listView}}",
+                            "**/{{COM:chatCommands.list}} {{COM:subCommands.toggle}} *<{{COM:arguments.zone}}>*** - {{REF:commandDescs.listToggle}}",
+                            "**/{{COM:chatCommands.bot}} {{COM:subCommands.list}}** - {{REF:commandDescs.botList}}",
+                            "**/{{COM:chatCommands.bot}} {{COM:subCommands.view}} *<{{COM:arguments.bot}}>*** - {{REF:commandDescs.botView}}",
+                            "**/{{COM:chatCommands.bot}} {{COM:subCommands.edit}} *<{{COM:arguments.bot}}>* *<{{COM:arguments.setting}}>*** - {{REF:commandDescs.botEdit}}",
+                            "**/{{COM:chatCommands.bot}} {{COM:subCommands.remove}} *<{{COM:arguments.bot}}>*** - {{REF:commandDescs.botRemove}}",
+                            "",
+                            "*{{REF:partials.dmWarning}}*"
+                        ]
+                    },
+                    {
+                        "name": "{{REF:fields.links}}",
+                        "value": ["{{REF:links.docsEmbed}}", "{{REF:links.supportEmbed}}"]
+                    }
+                ]
+            },
+            "permissions": {
+                "title": "{{COM:bot.name}} - Permissions",
+                "description": "Want to restrict commands to certain roles, users, or channels? Set up permissions under the bot's **Integration** page in the Server Settings (or simply right-click the bot and select **Manage Integration**).",
+                "fields": [
+                    {
+                        "name": "{{REF:fields.links}}",
+                        "value": ["{{REF:links.docsEmbed}}", "{{REF:links.supportEmbed}}"]
+                    }
+                ]
+            },
+            "faq": {
+                "title": "{{COM:bot.name}} - FAQ",
+                "description": [
+                    "Frequently Asked Questions about {{COM:bot.name}}.",
+                    "",
+                    "**How do I restrict who can run the commands?**",
+                    "Slash command permissions can be configured in the Server Settings. See \"/{{COM:chatCommands.help}} {{COM:arguments.option}}:{{REF:helpOptions.permissions}}\" for more information."
+                ],
+                "fields": [
+                    {
+                        "name": "{{REF:fields.links}}",
+                        "value": ["{{REF:links.docsEmbed}}", "{{REF:links.supportEmbed}}"]
+                    }
+                ]
+            },
+            "listTimeZone": {
+                "title": "Liste der Zeitzonen",
+                "description": [
+                    "Zeiten mit Zeitzone werden immer in folgende Zeitzone(n) umgewandelt.",
+                    "",
+                    "{{TIME_ZONE_LIST}}",
+                    "\u2800"
+                ],
+                "fields": [
+                    {
+                        "name": "{{REF:fields.actions}}",
+                        "value": [
+                            "`/{{COM:chatCommands.list}} {{COM:subCommands.toggle}} <{{COM:arguments.zone}}>` - {{REF:commandDescs.listToggle}}",
+                            "`/{{COM:chatCommands.server}} {{COM:subCommands.edit}} {{COM:arguments.setting}}:{{COM:settings.list}}` - Aktiviere oder deaktiviere die Liste."
+                        ]
+                    }
+                ]
+            },
+            "listBot": {
+                "title": "Botliste",
+                "description": [
+                    "Bots, die Einstellungen für diesen Server haben.",
+                    "",
+                    "{{BOT_LIST}}",
+                    "\u2800"
+                ],
+                "fields": [
+                    {
+                        "name": "{{REF:fields.actions}}",
+                        "value": [
+                            "`/{{COM:chatCommands.set}} {{COM:subCommands.user}} <{{COM:arguments.bot}}>` - {{REF:commandDescs.setUser}}",
+                            "`/{{COM:chatCommands.bot}} {{COM:subCommands.view}} <{{COM:arguments.bot}}>` - {{REF:commandDescs.botView}}"
+                        ]
+                    }
+                ]
+            },
+            "settingsServer": {
+                "title": "Servereinstellungen",
+                "description": [
+                    "{{REF:partials.italicizedDefaults}}",
+                    "",
+                    "{{SETTING_LIST}}",
+                    "\u2800"
+                ],
+                "fields": [
+                    {
+                        "name": "{{REF:fields.actions}}",
+                        "value": [
+                            "`/{{COM:chatCommands.server}} {{COM:subCommands.edit}} <{{COM:arguments.setting}}>` - {{REF:commandDescs.serverEdit}}",
+                            "`/{{COM:chatCommands.server}} {{COM:subCommands.remove}}` - {{REF:commandDescs.serverRemove}}"
+                        ]
+                    }
+                ],
+                "footer": { "text": "Server ID: {{SERVER_ID}}" }
+            },
+            "settingsBot": {
+                "title": "Boteinstellungen",
+                "description": [
+                    "{{REF:partials.italicizedDefaults}}",
+                    "",
+                    "{{SETTING_LIST}}",
+                    "\u2800"
+                ],
+                "fields": [
+                    {
+                        "name": "{{REF:fields.actions}}",
+                        "value": [
+                            "`/{{COM:chatCommands.bot}} {{COM:subCommands.edit}} <{{COM:arguments.bot}}> <{{COM:arguments.setting}}>` - {{REF:commandDescs.botEdit}}",
+                            "`/{{COM:chatCommands.bot}} {{COM:subCommands.remove}} <{{COM:arguments.bot}}>` - {{REF:commandDescs.botRemove}}"
+                        ]
+                    }
+                ],
+                "footer": { "text": "Bot ID: {{BOT_ID}}" }
+            },
+            "settingSelf": {
+                "title": "Meine Einstellungen",
+                "description": [
+                    "{{REF:partials.italicizedDefaults}}",
+                    "",
+                    "{{SETTING_LIST}}",
+                    "\u2800"
+                ],
+                "fields": [
+                    {
+                        "name": "{{REF:fields.actions}}",
+                        "value": [
+                            "`/{{COM:chatCommands.me}} {{COM:subCommands.edit}} <{{COM:arguments.setting}}>` - {{REF:commandDescs.meEdit}}",
+                            "`/{{COM:chatCommands.me}} {{COM:subCommands.remove}}` - {{REF:commandDescs.meRemove}}"
+                        ]
+                    }
+                ],
+                "footer": { "text": "Benutzer ID: {{USER_ID}}" }
+            },
+            "timeServer": {
+                "title": "Serverzeit",
+                "description": "Derzeit ist es **{{TIME}}** für den Server in **{{TIME_ZONE}}**."
+            },
+            "timeUser": {
+                "title": "Nutzerzeit",
+                "description": "Für {{USER}} ist es derzeit **{{TIME}}** in **{{TIME_ZONE}}**."
+            },
+            "timeUserPrivate": {
+                "title": "Nutzerzeit",
+                "description": "Für {{USER}} ist es derzeit **{{TIME}}**."
+            },
+            "timeTimeZone": {
+                "title": "Zeit der Zeitzone",
+                "description": "Derzeit ist es **{{TIME}}** in **{{TIME_ZONE}}**."
+            },
+            "about": {
+                "title": "{{COM:bot.name}} - About",
+                "description": "{{REF:bot.description}}",
+                "fields": [
+                    { "name": "Autor", "value": "{{REF:links.authorEmbed}}" },
+                    {
+                        "name": "{{REF:fields.links}}",
+                        "value": [
+                            "{{REF:links.sourceEmbed}}",
+                            "{{REF:links.docsEmbed}}",
+                            "{{REF:links.voteEmbed}}",
+                            "{{REF:links.donateEmbed}}",
+                            "{{REF:links.supportEmbed}}",
+                            "{{REF:links.inviteEmbed}}"
+                        ]
+                    },
+                    {
+                        "name": "Erstellt mit",
+                        "value": ["{{REF:links.templateEmbed}}"]
+                    }
+                ]
+            },
+            "translate": {
+                "title": "{{COM:bot.name}} - Übersetzungen",
+                "description": "Wir danken unseren Übersetzern, die es möglich gemacht haben, {{COM:bot.name}} in folgenden Sprachen zu nutzen. Du bist interressiert am Übersetzen? Dann kontaktiere doch unsere Mitarbeiter im [Hilfeserver]({{COM:links.support}})."
+            },
+            "dev": {
+                "title": "{{COM:bot.name}} - Entwicklerinformationen",
+                "fields": [
+                    {
+                        "name": "Versionen",
+                        "value": [
+                            "**Node.js**: {{NODE_VERSION}}",
+                            "**TypeScript**: {{TS_VERSION}}",
+                            "**ECMAScript**: {{ES_VERSION}}",
+                            "**discord.js**: {{DJS_VERSION}}"
+                        ]
+                    },
+                    {
+                        "name": "Statistiken",
+                        "value": [
+                            "**Shards**: {{SHARD_COUNT}}",
+                            "**Servers**: {{SERVER_COUNT}} ({{SERVER_COUNT_PER_SHARD}}/Shard)"
+                        ]
+                    },
+                    {
+                        "name": "Speicher",
+                        "value": [
+                            "**RSS**: {{RSS_SIZE}} ({{RSS_SIZE_PER_SERVER}}/Server)",
+                            "**Heap**: {{HEAP_TOTAL_SIZE}} ({{HEAP_TOTAL_SIZE_PER_SERVER}}/Server)",
+                            "**Used**: {{HEAP_USED_SIZE}} ({{HEAP_USED_SIZE_PER_SERVER}}/Server)"
+                        ]
+                    },
+                    {
+                        "name": "IDs",
+                        "value": [
+                            "**Hostname**: {{HOSTNAME}}",
+                            "**Shard ID**: {{SHARD_ID}}",
+                            "**Server ID**: {{SERVER_ID}}",
+                            "**Bot ID**: {{BOT_ID}}",
+                            "**Benutzer ID**: {{USER_ID}}"
+                        ]
+                    }
+                ]
+            },
+            "linkMap": {
+                "title": "Karte der Zeitzonen",
+                "description": [
+                    "{{REF:partials.findTimeZoneHelp}} Du kannst den Namen der angezeigten Zeitzone kopieren und sie für alles nutzen, wofür {{COM:bot.name}} eine Zeitzone braucht."
+                ]
+            },
+            "timeConversionDm": {
+                "description": [
+                    "{{USER}} wurde in {{CHANNEL}} zu folgenden Zeiten erwähnt.",
+                    "",
+                    "{{TIME_ZONE_FROM}} ➡️ **{{TIME_ZONE_TO}}**",
+                    "",
+                    "{{TIME_LIST}}",
+                    "",
+                    "[Ursprüngliche Nachricht]({{MESSAGE_LINK}})"
+                ]
+            },
+            "timeConversionGuild": {
+                "description": ["***{{TIME_ZONE_FROM}}***", "{{TIME_TEXT_LIST}}", ""]
+            },
+            "timeZoneReminder": {
+                "description": [
+                    "Hoi {{USER}}, es sieht aus, dass du [eine Zeit erwähnt oder zu einer reagiert hast]({{MESSAGE_LINK}}), aber noch keine Zeitzone gesetzt hast.",
+                    "",
+                    "Setze deine Zeitzone, indem du den `/{{COM:chatCommands.set}} {{COM:subCommands.me}}`-Befehl schreibst!",
+                    "",
+                    "Dies erlaubt {{COM:bot.name}} Zeiten von und zu deiner Zeit zu konvertieren, was das Koordinieren von Zeiten vereinfacht."
+                ],
+                "footer": {
+                    "text": "Wenn du diese Errinerung ausschalten möchtest, schreibe bitte \"/{{COM:chatCommands.me}} {{COM:subCommands.edit}} {{COM:arguments.setting}}:{{COM:settings.reminders}}\"."
+                },
+                "color": "{{COM:colors.warning}}"
+            }
+        },
+        "promptEmbeds": {
+            "autoDetectGuild": {
+                "title": "Server - {{REF:settings.autoDetect}}",
+                "description": [
+                    "Möchtest du {{COM:bot.name}} erlauben, Zeiten automatisch zu erkennen?",
+                    "",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yes}}. Zeiten im Chat werden automatisch erkannt.",
+                    "",
+                    "`{{COM:yesNo.no}}` - {{REF:yesNo.no}}. Zeiten im Chat werden **nicht** automatisch erkannt. Ein 🕰️-Emoji muss in einer Nachricht präsent sein, um Zeiten zu erkennen und zu konvertieren.",
+                    "\u2800"
+                ],
+                "footer": { "text": "{{REF:footers.collector}}" }
+            },
+            "timeZoneGuild": {
+                "title": "Server - {{REF:settings.timeZone}}",
+                "description": [
+                    "In welcher Zeitzone liegt dieser Server?",
+                    "",
+                    "{{REF:partials.findTimeZoneHelp}}",
+                    "",
+                    "Beispiel: `Europe/Zurich`"
+                ],
+                "footer": { "text": "{{REF:footers.collector}}" }
+            },
+            "timeZoneBot": {
+                "title": "Bot - {{REF:settings.timeZone}}",
+                "description": [
+                    "In welcher Zeitzone liegt {{BOT}}?",
+                    "",
+                    "{{REF:partials.findTimeZoneHelp}}",
+                    "",
+                    "Beispiel: `Europe/Zurich`"
+                ],
+                "footer": { "text": "{{REF:footers.collector}}" }
+            },
+            "timeZoneSelf": {
+                "title": "Nutzer - {{REF:settings.timeZone}}",
+                "description": [
+                    "Was ist deine Zeitzone?",
+                    "",
+                    "{{REF:partials.findTimeZoneHelp}}",
+                    "",
+                    "Beispiel: `Europe/Zurich`"
+                ],
+                "footer": { "text": "{{REF:footers.collector}}" }
+            },
+            "timeZoneUser": {
+                "title": "User - {{REF:settings.timeZone}}",
+                "description": [
+                    "Was ist die Zeitzone von {{USER}}?",
+                    "",
+                    "{{REF:partials.findTimeZoneHelp}}",
+                    "",
+                    "Beispiel: `Europe/Zurich`"
+                ],
+                "footer": { "text": "{{REF:footers.collector}}" }
+            },
+            "timeZoneConfirmGuild": {
+                "description": [
+                    "{{REF:partials.timeInTimeZone}}",
+                    "",
+                    "Bitte bestätige, dass dies die Zeitzone des Servers ist?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
+                ],
+                "footer": { "text": "{{REF:footers.collector}}" }
+            },
+            "timeZoneConfirmBot": {
+                "description": [
+                    "{{REF:partials.timeInTimeZone}}",
+                    "",
+                    "Bitte bestätige, dass dies die Zeitzone von {{BOT}} ist?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
+                ],
+                "footer": { "text": "{{REF:footers.collector}}" }
+            },
+            "timeZoneConfirmSelf": {
+                "description": [
+                    "{{REF:partials.timeInTimeZone}}",
+                    "",
+                    "Bitte bestätige, dass dies deine Zeitzone ist?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
+                ],
+                "footer": { "text": "{{REF:footers.collector}}" }
+            },
+            "timeZoneConfirmUser": {
+                "description": [
+                    "{{REF:partials.timeInTimeZone}}",
+                    "",
+                    "Bitte bestätige, dass dies die Zeitzone von {{USER}} ist?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
+                ],
+                "footer": { "text": "{{REF:footers.collector}}" }
+            },
+            "listGuild": {
+                "title": "Server - {{REF:settings.list}}",
+                "description": [
+                    "Willst du, dass {{COM:bot.name}} eine Liste aller konvertierten Zeiten sendet, wenn eine Zeit gesendet wird?",
+                    "",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yes}}. {{COM:bot.name}} wird Zeiten in alle in der Liste angegebenen Zeiten konvertieren (`/{{COM:chatCommands.list}} {{COM:subCommands.view}}`). This list will be sent in the same channel as the original message.",
+                    "",
+                    "`{{COM:yesNo.no}}` - {{REF:yesNo.no}}. Keine Listen werden gezeigt.",
+                    "\u2800"
+                ],
+                "footer": { "text": "{{REF:footers.collector}}" }
+            },
+            "remindersGuild": {
+                "title": "Server - {{REF:settings.reminders}}",
+                "description": [
+                    "Willst du alle Nutzer benachrichtigen, eine Zeitzone zu setzen?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
+                ],
+                "footer": { "text": "{{REF:footers.collector}}" }
+            },
+            "remindersUser": {
+                "title": "Nutzer - {{REF:settings.reminders}}",
+                "description": [
+                    "Willst du dich benachrichtigen, eine Zeitzone zu setzen?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
+                ],
+                "footer": { "text": "{{REF:footers.collector}}" }
+            },
+            "dateFormatBot": {
+                "title": "Bot - {{REF:settings.dateFormat}}",
+                "description": [
+                    "Welches Format nutzt {{BOT}} am meisten für Daten?",
+                    "",
+                    "`{{COM:dateFormat.monthDay}}` - {{REF:dateFormat.monthDay}}",
+                    "",
+                    "`{{COM:dateFormat.dayMonth}}` - {{REF:dateFormat.dayMonth}}",
+                    "\u2800"
+                ],
+                "footer": { "text": "{{REF:footers.collector}}" }
+            },
+            "dateFormatUser": {
+                "title": "Nutzer - {{REF:settings.dateFormat}}",
+                "description": [
+                    "Welches Format nutzt du am meisten für Daten?",
+                    "",
+                    "`{{COM:dateFormat.monthDay}}` - {{REF:dateFormat.monthDay}}",
+                    "",
+                    "`{{COM:dateFormat.dayMonth}}` - {{REF:dateFormat.dayMonth}}",
+                    "\u2800"
+                ],
+                "footer": { "text": "{{REF:footers.collector}}" }
+            },
+            "timeFormatGuild": {
+                "title": "Server - {{REF:settings.timeFormat}}",
+                "description": [
+                    "Welches Format soll für Nachrichten in diesem Server benutzt werden?",
+                    "",
+                    "`{{COM:timeFormat.twelveHour}}` - {{REF:timeFormat.twelveHour}}",
+                    "",
+                    "`{{COM:timeFormat.twentyFourHour}}` - {{REF:timeFormat.twentyFourHour}}",
+                    "\u2800"
+                ],
+                "footer": { "text": "{{REF:footers.collector}}" }
+            },
+            "timeFormatUser": {
+                "title": "User - {{REF:settings.timeFormat}}",
+                "description": [
+                    "Welches Zeitformat nutzt du?",
+                    "",
+                    "`{{COM:timeFormat.twelveHour}}` - {{REF:timeFormat.twelveHour}}",
+                    "",
+                    "`{{COM:timeFormat.twentyFourHour}}` - {{REF:timeFormat.twentyFourHour}}",
+                    "\u2800"
+                ],
+                "footer": { "text": "{{REF:footers.collector}}" }
+            },
+            "privateModeUser": {
+                "title": "User - {{REF:settings.privateMode}}",
+                "description": [
+                    "Willst du deine Zeitzone und andere Informationen geheim halten?",
+                    "",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yes}}. {{COM:bot.name}} wird verhindern, deine Zeitzone anderen zu zeigen.",
+                    "",
+                    "`{{COM:yesNo.no}}` - {{REF:yesNo.no}}. Ich finde es in Ordnung, dass diese Informationen geteilt werden.",
+                    "\u2800"
+                ],
+                "footer": { "text": "{{REF:footers.collector}}" }
+            },
+            "languageGuild": {
+                "title": "Server - {{REF:settings.language}}",
+                "description": [
+                    "Welche Sprache möchtest du in diesem Server benutzen?",
+                    "",
+                    "{{LANGUAGE_LIST}}",
+                    "",
+                    "*Beachte: Die Sprache eines Nutzers überschreibt die des Servers. {{REF:partials.translateNote}}*"
+                ],
+                "footer": { "text": "{{REF:footers.collector}}" }
+            },
+            "languageUser": {
+                "title": "Nutzer - {{REF:settings.language}}",
+                "description": [
+                    "Welche Sprache möchtest du benutzen?",
+                    "",
+                    "{{LANGUAGE_LIST}}",
+                    "",
+                    "*{{REF:partials.translateNote}}*"
+                ],
+                "footer": { "text": "{{REF:footers.collector}}" }
+            },
+            "setConfirmUser": {
+                "description": [
+                    "{{SETTING_LIST}}",
+                    "",
+                    "{{USER}}, bitte bestätige, dass du diese Einstellungen nutzen möchtest?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
+                ],
+                "footer": { "text": "{{REF:footers.collector}}" }
+            }
+        },
+        "resultEmbeds": {
+            "collectorExpired": {
+                "description": "Die Zeit für die Einrichtung ist vorüber. Bitte versuche es erneut.",
+                "color": "{{COM:colors.warning}}"
+            },
+            "setupCompleted": {
+                "description": [
+                    "{{REF:partials.congratulations}}",
+                    "",
+                    "Du hast die Server-Einrichtung geschafft!",
+                    "",
+                    "{{SETTING_LIST}}",
+                    "\u2800"
+                ],
+                "fields": [
+                    {
+                        "name": "{{REF:fields.actions}}",
+                        "value": [
+                            "`/{{COM:chatCommands.server}} {{COM:subCommands.view}}` - {{REF:commandDescs.serverView}}"
+                        ]
+                    }
+                ],
+                "color": "{{COM:colors.success}}"
+            },
+            "setCompletedSelf": {
+                "description": [
+                    "{{REF:partials.congratulations}}",
+                    "",
+                    "Du hast deine Einrichtung geschafft!",
+                    "",
+                    "*Beachte: {{REF:partials.dmWarning}}*",
+                    "",
+                    "{{SETTING_LIST}}",
+                    "\u2800"
+                ],
+                "fields": [
+                    {
+                        "name": "{{REF:fields.actions}}",
+                        "value": [
+                            "`/{{COM:chatCommands.me}} {{COM:subCommands.view}}` - {{REF:commandDescs.meView}}"
+                        ]
+                    }
+                ],
+                "color": "{{COM:colors.success}}"
+            },
+            "setCompletedUser": {
+                "description": [
+                    "{{REF:partials.congratulations}}",
+                    "",
+                    "Du hast die Nutzer-Einrichtung geschafft!",
+                    "",
+                    "*Beachte: {{REF:partials.dmWarning}}*",
+                    "",
+                    "{{SETTING_LIST}}",
+                    "\u2800"
+                ],
+                "fields": [
+                    {
+                        "name": "{{REF:fields.actions}}",
+                        "value": [
+                            "`/{{COM:chatCommands.me}} {{COM:subCommands.view}}` - {{REF:commandDescs.meView}}"
+                        ]
+                    }
+                ],
+                "color": "{{COM:colors.success}}"
+            },
+            "setCompletedBot": {
+                "description": [
+                    "{{REF:partials.congratulations}}",
+                    "",
+                    "Du hast die Bot-Einrichtung geschafft!",
+                    "",
+                    "{{SETTING_LIST}}",
+                    "\u2800"
+                ],
+                "fields": [
+                    {
+                        "name": "{{REF:fields.actions}}",
+                        "value": [
+                            "`/{{COM:chatCommands.bot}} {{COM:subCommands.view}} <{{COM:arguments.bot}}>` - {{REF:commandDescs.botView}}"
+                        ]
+                    }
+                ],
+                "color": "{{COM:colors.success}}"
+            },
+            "setDeniedUser": {
+                "description": "Nutzer-Einrichtung nicht freigegeben. Deine Einstellungen wurden nicht aktualisiert.",
+                "color": "{{COM:colors.error}}"
+            },
+            "updatedSettingGuild": {
+                "description": "Die Einstellung **{{SETTING_NAME}}** wurde zu **{{SETTING_VALUE}}** gesetzt.",
+                "color": "{{COM:colors.success}}"
+            },
+            "updatedSettingBot": {
+                "description": "Die Einstellung **{{SETTING_NAME}}** von {{BOT}} wurde zu **{{SETTING_VALUE}}** gesetzt.",
+                "color": "{{COM:colors.success}}"
+            },
+            "updatedSettingUser": {
+                "description": "Deine Einstellung **{{SETTING_NAME}}** wurde zu **{{SETTING_VALUE}}** gesetzt.",
+                "color": "{{COM:colors.success}}"
+            },
+            "removedSettingGuild": {
+                "description": "Die Einstellung **{{SETTING_NAME}}** wurde entfernt.",
+                "color": "{{COM:colors.success}}"
+            },
+            "removedSettingBot": {
+                "description": "Die Einstellung **{{SETTING_NAME}}** von {{BOT}} wurde entfernt.",
+                "color": "{{COM:colors.success}}"
+            },
+            "removedSettingUser": {
+                "description": "Deine Einstellung **{{SETTING_NAME}}** wurde entfernt.",
+                "color": "{{COM:colors.success}}"
+            },
+            "removedGuild": {
+                "description": "Alle Daten von diesem Server wurden gelöscht.",
+                "color": "{{COM:colors.success}}"
+            },
+            "removedBot": {
+                "description": "Alle Daten zu {{BOT}} wurden gelöscht.",
+                "color": "{{COM:colors.success}}"
+            },
+            "removedUser": {
+                "description": "Deine Daten wurden gelöscht.",
+                "color": "{{COM:colors.success}}"
+            },
+            "addedListItem": {
+                "description": "**{{TIME_ZONE}}** wurde zur Liste der Zeitzonen hinzugefügt.",
+                "color": "{{COM:colors.success}}"
+            },
+            "removedListItem": {
+                "description": "**{{TIME_ZONE}}** wurde von der Liste der Zeitzonen entfernt.",
+                "color": "{{COM:colors.success}}"
+            }
+        },
+        "validationEmbeds": {
+            "oldPrefixUsed": {
+                "title": "Slash Commands Update",
+                "description": [
+                    "{{COM:bot.name}} now uses **Slash Commands**! Try it by typing `/{{COM:chatCommands.help}}`!",
+                    "",
+                    "If you don't see any slash commands listed for {{COM:bot.name}}:",
+                    "",
+                    "1. Check that you have the **Use Application Commands** permission in this channel.",
+                    "2. Try kicking and [re-inviting {{COM:bot.name}}]({{COM:links.invite}}).",
+                    "3. Join our [support server]({{COM:links.support}}) for help."
+                ],
+                "image": "{{COM:images.helpCommand}}",
+                "color": "{{COM:colors.warning}}"
+            },
+            "cooldownHit": {
+                "description": "You can only run this command {{AMOUNT}} time(s) every {{INTERVAL}}. Please wait before attempting this command again.",
+                "color": "{{COM:colors.warning}}"
+            },
+            "devOnly": {
+                "description": "This action can only be done by developers.",
+                "color": "{{COM:colors.warning}}"
+            },
+            "serverOnlyCommand": {
+                "description": "Dieser Befehl kann nur in einem Server ausgeführt werden.",
+                "color": "{{COM:colors.warning}}"
+            },
+            "missingClientPerms": {
+                "description": [
+                    "I don't have all permissions required to run that command here! Please check the server and channel permissions to make sure I have the following permissions.",
+                    "",
+                    "Required permissions: {{PERMISSIONS}}"
+                ],
+                "color": "{{COM:colors.warning}}"
+            },
+            "missingUserPerms": {
+                "description": "Du hast nicht die benötigten Berechtigungen, um diesen Befehl auszuführen!",
+                "color": "{{COM:colors.warning}}"
+            },
+            "notFoundSetting": {
+                "description": "Einstellung nicht gefunden.",
+                "color": "{{COM:colors.error}}"
+            },
+            "notFoundBot": {
+                "description": [
+                    "Bot nicht gefunden oder keine Einrichtung durchgeführt.",
+                    "",
+                    "Schreibe `/{{COM:chatCommands.set}} {{COM:subCommands.user}} <{{COM:arguments.bot}}>` um einen neuen Bot einzurichten."
+                ],
+                "color": "{{COM:colors.error}}"
+            },
+            "notFoundUser": {
+                "description": "Nutzer nicht gefunden.",
+                "color": "{{COM:colors.error}}"
+            },
+            "invalidTimeZone": {
+                "description": "Ungültige Zeitzone, bitte neu probieren!",
+                "color": "{{COM:colors.error}}"
+            },
+            "invalidDateFormat": {
+                "description": "Ungültiges Datumsformat, bitte neu probieren!",
+                "color": "{{COM:colors.error}}"
+            },
+            "invalidTimeFormat": {
+                "description": "Ungültiges Zeitformat, bitte neu probieren!",
+                "color": "{{COM:colors.error}}"
+            },
+            "invalidYesNo": {
+                "description": "Ungültige \"ja\"-oder \"nein\"-Antwort, bitte neu probieren!",
+                "color": "{{COM:colors.error}}"
+            },
+            "invalidLanguage": {
+                "description": "Ungültige/Noch nicht verfügbare Sprache, bitte neu probieren!",
+                "color": "{{COM:colors.error}}"
+            },
+            "privateModeEnabled": {
+                "description": [
+                    "Du hast den privaten Modus aktiviert!",
+                    "",
+                    "Bitte wiederhole ihn in einer Direktnachricht, um deine Informationen nicht zu veröffentlichen."
+                ],
+                "color": "{{COM:colors.warning}}"
+            },
+            "notAllowedAbbreviation": {
+                "description": "Abkürzung von Zeitzonen ist nicht erlaubt, bitte neu probieren!",
+                "color": "{{COM:colors.warning}}"
+            },
+            "notAllowedSetClient": {
+                "description": "Du kannst die Nutzer-Einrichtung für {{COM:bot.name}} nicht starten!",
+                "color": "{{COM:colors.warning}}"
+            },
+            "maxLimitList": {
+                "description": "Diese Serverliste hat schon die maximale Anzahl Zeitzonen erreicht!",
+                "color": "{{COM:colors.warning}}"
+            },
+            "maxLimitBots": {
+                "description": "Dieser Server hat schon die maximale Anzahl Bot-Einrichtungen erreicht!",
+                "color": "{{COM:colors.warning}}"
+            },
+            "noTimeZoneServer": {
+                "description": "Dieser Server hat noch keine Zeitzone!",
+                "color": "{{COM:colors.warning}}"
+            },
+            "noTimeZoneUser": {
+                "description": "{{USER}} hat noch keine Zeitzone!",
+                "color": "{{COM:colors.warning}}"
+            }
+        },
+        "errorEmbeds": {
+            "command": {
+                "description": "Etwas lief schief!",
+                "fields": [
+                    {
+                        "name": "Fehlercode",
+                        "value": "{{ERROR_CODE}}"
+                    },
+                    {
+                        "name": "Server ID",
+                        "value": "{{GUILD_ID}}"
+                    },
+                    {
+                        "name": "Shard ID",
+                        "value": "{{SHARD_ID}}"
+                    },
+                    {
+                        "name": "Hilfe aufsuchen",
+                        "value": "{{COM:links.support}}"
+                    }
+                ],
+                "color": "{{COM:colors.error}}"
+            },
+            "startupInProcess": {
+                "description": "{{COM:bot.name}} startet noch. Bitte versuche es nochmal.",
+                "color": "{{COM:colors.warning}}"
+            },
+            "notImplemented": {
+                "description": "This feature has not been implemented yet!",
+                "color": "{{COM:colors.warning}}"
+            }
+        },
+        "channelRegexes": {
+            "bot": "/bot|command|cmd/i"
+        }
+    },
+    "refs": {
+        "meta": {
+            "translators": "[WoelfiVW#3870](https://github.com/WoelfiVW)"
+        },
+        "bot": {
+            "description": "{{COM:bot.name}} hilft deinem Server, Zeiten zu koordinieren!"
+        },
+        "commandDescs": {
+            "bot": "Manage bot settings.",
+            "botList": "View list of bots.",
+            "botView": "View a bot's settings.",
+            "botEdit": "Change a bot setting.",
+            "botRemove": "Remove a bot.",
+            "help": "Get help with commands, permissions, FAQ, etc.",
+            "info": "View bot info.",
+            "list": "Manage the server time zone list.",
+            "listView": "View the server time zone list.",
+            "listToggle": "Add or remove to the server time zone list.",
+            "map": "View the zone map.",
+            "me": "Manage your user settings.",
+            "meView": "View your user settings.",
+            "meEdit": "Change a user setting.",
+            "meRemove": "Remove all your user data.",
+            "server": "Manage server settings.",
+            "serverView": "View server settings.",
+            "serverEdit": "Change a server setting.",
+            "serverRemove": "Remove all server data.",
+            "set": "Run the user setup (for yourself, a user, or bot).",
+            "setMe": "Run the user setup for yourself.",
+            "setUser": "Run the user setup for a user or bot.",
+            "setup": "Run the server setup.",
+            "time": "View the time of the server, user, bot, or zone.",
+            "timeServer": "View the time of the server.",
+            "timeUser": "View the time of a user or bot.",
+            "timeZone": "View the time of a zone."
+        },
+        "settings": {
+            "autoDetect": "Automatische Erkennung",
+            "dateFormat": "Datumsformat",
+            "language": "Sprache",
+            "list": "Liste",
+            "privateMode": "Privater Modus",
+            "reminders": "Erinnerungen",
+            "timeFormat": "Zeitformat",
+            "timeZone": "Zeitzone"
+        },
+        "dateFormat": {
+            "monthDay": "Monat/Tag",
+            "dayMonth": "Tag/Monat"
+        },
+        "timeFormat": {
+            "twelveHour": "12-Stunden",
+            "twentyFourHour": "24-Stunden"
+        },
+        "yesNo": {
+            "yes": "Ja",
+            "no": "Nein"
+        },
+        "argDescs": {
+            "helpOption": "Option.",
+            "infoOption": "Option."
+        },
+        "lists": {
+            "settingItem": [
+                "**{{SETTING_NAME}}** (`{{SETTING_KEYWORD}}`):",
+                "{{SETTING_VALUE}}",
+                ""
+            ],
+            "timeZoneItem": "- **{{TIME_ZONE}}**",
+            "timeZoneNone": "*Der Server hat noch keine Zeitzonen in der Liste.*",
+            "botItem": "- {{BOT}}",
+            "botNone": "*Der Server hat noch keine Bots eingerichtet.*",
+            "timeTextItem": "> {{TIME_TEXT}}",
+            "timeTextWithPosItem": "> **{{POSITION}}**. {{TIME_TEXT}}",
+            "timeTextAndTimeItem": ["> {{TIME_TEXT}}", "**{{TIME_START}}**", ""],
+            "timeTextAndTimeWithEndItem": [
+                "> {{TIME_TEXT}}",
+                "**{{TIME_START}}** - **{{TIME_END}}**",
+                ""
+            ],
+            "timeItem": "{{TIME_START}}",
+            "timeWithEndItem": "{{TIME_START}} - {{TIME_END}}",
+            "timeWithPosItem": "**{{POSITION}}**. {{TIME_START}}",
+            "timeWithPosAndEndItem": "**{{POSITION}}**. {{TIME_START}} - {{TIME_END}}"
+        },
+        "fields": {
+            "commands": "Befehle",
+            "actions": "Aktionen",
+            "links": "Links"
+        },
+        "footers": {
+            "collector": "Schreibe nun deine Antwort (oder '{{COM:keywords.stop}}' zum Stoppen)."
+        },
+        "permissions": {
+            "AddReactions": "Add Reactions",
+            "Administrator": "Administrator",
+            "AttachFiles": "Attach Files",
+            "BanMembers": "Ban Members",
+            "ChangeNickname": "Change Nickname",
+            "Connect": "Connect",
+            "CreateInstantInvite": "Create Invite",
+            "CreatePrivateThreads": "Create Private Threads",
+            "CreatePublicThreads": "Create Public Threads",
+            "DeafenMembers": "Deafen Members",
+            "EmbedLinks": "Embed Links",
+            "KickMembers": "Kick Members",
+            "ManageChannels": "Manage Channel(s)",
+            "ManageEmojisAndStickers": "Manage Emoji and Stickers",
+            "ManageEvents": "Manage Events",
+            "ManageGuild": "Manage Server",
+            "ManageMessages": "Manage Messages",
+            "ManageNicknames": "Manage Nicknames",
+            "ManageRoles": "Manage Roles / Permissions",
+            "ManageThreads": "Manage Threads / Posts",
+            "ManageWebhooks": "Manage Webhooks",
+            "MentionEveryone": "Mention Everyone, Here, and All Roles",
+            "ModerateMembers": "Timeout Members",
+            "MoveMembers": "Move Members",
+            "MuteMembers": "Mute Members",
+            "PrioritySpeaker": "Priority Speaker",
+            "ReadMessageHistory": "Read Message History",
+            "RequestToSpeak": "Request to Speak",
+            "SendMessages": "Send Messages / Create Posts",
+            "SendMessagesInThreads": "Send Messages in Threads / Posts",
+            "SendTTSMessages": "Send Text-to-Speech Messages",
+            "Speak": "Speak",
+            "Stream": "Video",
+            "UseApplicationCommands": "Use Application Commands",
+            "UseEmbeddedActivities": "Use Activities",
+            "UseExternalEmojis": "Use External Emoji",
+            "UseExternalStickers": "Use External Stickers",
+            "UseVAD": "Use Voice Activity",
+            "ViewAuditLog": "View Audit Log",
+            "ViewChannel": "View Channel(s)",
+            "ViewGuildInsights": "View Server Insights"
+        },
+        "helpOptions": {
+            "commands": "Commands",
+            "permissions": "Permissions",
+            "faq": "FAQ"
+        },
+        "infoOptions": {
+            "about": "About",
+            "translate": "Translate",
+            "dev": "Dev"
+        },
+        "boolean": {
+            "true": "True",
+            "false": "False"
+        },
+        "other": {
+            "na": "N/A",
+            "private": "Privat"
+        },
+        "links": {
+            "authorEmbed": "[{{COM:bot.author}}]({{COM:links.author}})",
+            "docsEmbed": "[Siehe Dokumentation]({{COM:links.docs}}/)",
+            "donateEmbed": "[Donate via PayPal]({{COM:links.donate}})",
+            "inviteEmbed": "[Lade {{COM:bot.name}} zu deinem Server ein!]({{COM:links.invite}})",
+            "mapEmbed": "[Karte der Zeitzonen]({{COM:links.map}})",
+            "sourceEmbed": "[Schau’ dir den Quellcode an]({{COM:links.source}})",
+            "supportEmbed": "[Hilfeserver beitreten]({{COM:links.support}})",
+            "templateEmbed": "[Discord Bot TypeScript Template]({{COM:links.template}})",
+            "voteEmbed": "[Stimme für {{COM:bot.name}}!]({{COM:links.vote}})"
+        },
+        "partials": {
+            "congratulations": "🎉 Glückwunsch! 🎉",
+            "yesOrNo": [
+                "`{{COM:yesNo.yes}}` - {{REF:yesNo.yes}}",
+                "",
+                "`{{COM:yesNo.no}}` - {{REF:yesNo.no}}"
+            ],
+            "italicizedDefaults": "*Kursive* EInstellungen sind standard.",
+            "timeInTimeZone": "In **{{TIME_ZONE}}** ist es derzeit **{{TIME_12_HOUR}}** / **{{TIME_24_HOUR}}**.",
+            "findTimeZoneHelp": [
+                "Du kannst Zeitzonen mithilfe von __{{REF:links.mapEmbed}}__ finden.",
+                "",
+                "Tippe einfach **auf deinen Standort auf der Karte** um deine Zeitzone zu sehen."
+            ],
+            "translateNote": "Schreibe `/{{COM:chatCommands.info}} {{COM:arguments.option}}:{{REF:infoOptions.translate}}` um mehr über Übersetzungen zu erfahren.",
+            "dmWarning": "Einige Befehle benötigen Direktnachrichten in mindestens einem Server, den du mit {{COM:bot.name}} teilst, aktiviert."
+        }
+    }
+}

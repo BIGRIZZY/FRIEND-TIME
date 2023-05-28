@@ -1,0 +1,1028 @@
+{
+    "data": {
+        "displayEmbeds": {
+            "welcome": {
+                "title": "Bedankt voor het gebruiken van {{COM:bot.name}}!",
+                "description": ["{{REF:bot.description}}"],
+                "fields": [
+                    {
+                        "name": "Belangrijke {{REF:fields.commands}}",
+                        "value": ["**/{{COM:chatCommands.help}}** - {{REF:commandDescs.help}}"]
+                    },
+                    {
+                        "name": "{{REF:fields.links}}",
+                        "value": ["{{REF:links.docsEmbed}}", "{{REF:links.supportEmbed}}"]
+                    }
+                ]
+            },
+            "commands": {
+                "title": "{{COM:bot.name}} - Commands",
+                "fields": [
+                    {
+                        "name": "Gebruiker {{REF:fields.commands}}",
+                        "value": [
+                            "**/{{COM:chatCommands.set}} {{COM:subCommands.me}}** - {{REF:commandDescs.setMe}}",
+                            "**/{{COM:chatCommands.set}} {{COM:subCommands.user}} *<{{COM:arguments.user}}>*** - {{REF:commandDescs.setUser}}",
+                            "**/{{COM:chatCommands.me}} {{COM:subCommands.view}}** - {{REF:commandDescs.meView}}",
+                            "**/{{COM:chatCommands.me}} {{COM:subCommands.edit}} *<{{COM:arguments.setting}}>*** - {{REF:commandDescs.meEdit}}",
+                            "**/{{COM:chatCommands.me}} {{COM:subCommands.remove}}** - {{REF:commandDescs.meRemove}}",
+                            "**/{{COM:chatCommands.time}} {{COM:subCommands.server}}** - {{REF:commandDescs.timeServer}}",
+                            "**/{{COM:chatCommands.time}} {{COM:subCommands.user}} *<{{COM:arguments.user}}>*** - {{REF:commandDescs.timeUser}}",
+                            "**/{{COM:chatCommands.time}} {{COM:subCommands.zone}} *<{{COM:arguments.zone}}>*** - {{REF:commandDescs.timeZone}}",
+                            "**/{{COM:chatCommands.map}}** - {{REF:commandDescs.map}}"
+                        ]
+                    },
+                    {
+                        "name": "Beheerder {{REF:fields.commands}}",
+                        "value": [
+                            "**/{{COM:chatCommands.setup}}** - {{REF:commandDescs.setup}}",
+                            "**/{{COM:chatCommands.server}} {{COM:subCommands.view}}** - {{REF:commandDescs.serverView}}",
+                            "**/{{COM:chatCommands.server}} {{COM:subCommands.edit}} *<{{COM:arguments.setting}}>*** - {{REF:commandDescs.serverEdit}}",
+                            "**/{{COM:chatCommands.server}} {{COM:subCommands.remove}}** - {{REF:commandDescs.serverRemove}}",
+                            "**/{{COM:chatCommands.list}} {{COM:subCommands.view}}** - {{REF:commandDescs.listView}}",
+                            "**/{{COM:chatCommands.list}} {{COM:subCommands.toggle}} *<{{COM:arguments.zone}}>*** - {{REF:commandDescs.listToggle}}",
+                            "**/{{COM:chatCommands.bot}} {{COM:subCommands.list}}** - {{REF:commandDescs.botList}}",
+                            "**/{{COM:chatCommands.bot}} {{COM:subCommands.view}} *<{{COM:arguments.bot}}>*** - {{REF:commandDescs.botView}}",
+                            "**/{{COM:chatCommands.bot}} {{COM:subCommands.edit}} *<{{COM:arguments.bot}}>* *<{{COM:arguments.setting}}>*** - {{REF:commandDescs.botEdit}}",
+                            "**/{{COM:chatCommands.bot}} {{COM:subCommands.remove}} *<{{COM:arguments.bot}}>*** - {{REF:commandDescs.botRemove}}",
+                            "",
+                            "*{{REF:partials.dmWarning}}*"
+                        ]
+                    },
+                    {
+                        "name": "{{REF:fields.links}}",
+                        "value": ["{{REF:links.docsEmbed}}", "{{REF:links.supportEmbed}}"]
+                    }
+                ]
+            },
+            "permissions": {
+                "title": "{{COM:bot.name}} - Permissions",
+                "description": "Want to restrict commands to certain roles, users, or channels? Set up permissions under the bot's **Integration** page in the Server Settings (or simply right-click the bot and select **Manage Integration**).",
+                "fields": [
+                    {
+                        "name": "{{REF:fields.links}}",
+                        "value": ["{{REF:links.docsEmbed}}", "{{REF:links.supportEmbed}}"]
+                    }
+                ]
+            },
+            "faq": {
+                "title": "{{COM:bot.name}} - FAQ",
+                "description": [
+                    "Frequently Asked Questions about {{COM:bot.name}}.",
+                    "",
+                    "**How do I restrict who can run the commands?**",
+                    "Slash command permissions can be configured in the Server Settings. See \"/{{COM:chatCommands.help}} {{COM:arguments.option}}:{{REF:helpOptions.permissions}}\" for more information."
+                ],
+                "fields": [
+                    {
+                        "name": "{{REF:fields.links}}",
+                        "value": ["{{REF:links.docsEmbed}}", "{{REF:links.supportEmbed}}"]
+                    }
+                ]
+            },
+            "listTimeZone": {
+                "title": "Tijdzone lijst",
+                "description": [
+                    "Een lijst met tijdzones om naar te converteren wanneer een tijd wordt vermeld in een bericht.",
+                    "",
+                    "{{TIME_ZONE_LIST}}",
+                    "\u2800"
+                ],
+                "fields": [
+                    {
+                        "name": "{{REF:fields.actions}}",
+                        "value": [
+                            "`/{{COM:chatCommands.list}} {{COM:subCommands.toggle}} <{{COM:arguments.zone}}>` - {{REF:commandDescs.listToggle}}",
+                            "`/{{COM:chatCommands.server}} {{COM:subCommands.edit}} {{COM:arguments.setting}}:{{COM:settings.list}}` - De lijst in- of uitschakelen."
+                        ]
+                    }
+                ]
+            },
+            "listBot": {
+                "title": "Bot lijst",
+                "description": [
+                    "Een lijst met bots met instellingen op deze server.",
+                    "",
+                    "{{BOT_LIST}}",
+                    "\u2800"
+                ],
+                "fields": [
+                    {
+                        "name": "{{REF:fields.actions}}",
+                        "value": [
+                            "`/{{COM:chatCommands.set}} {{COM:subCommands.user}} <{{COM:arguments.bot}}>` - {{REF:commandDescs.setUser}}",
+                            "`/{{COM:chatCommands.bot}} {{COM:subCommands.view}} <{{COM:arguments.bot}}>` - {{REF:commandDescs.botView}}"
+                        ]
+                    }
+                ]
+            },
+            "settingsServer": {
+                "title": "Server instellingen",
+                "description": [
+                    "{{REF:partials.italicizedDefaults}}",
+                    "",
+                    "{{SETTING_LIST}}",
+                    "\u2800"
+                ],
+                "fields": [
+                    {
+                        "name": "{{REF:fields.actions}}",
+                        "value": [
+                            "`/{{COM:chatCommands.server}} {{COM:subCommands.edit}} <{{COM:arguments.setting}}>` - {{REF:commandDescs.serverEdit}}",
+                            "`/{{COM:chatCommands.server}} {{COM:subCommands.remove}}` - {{REF:commandDescs.serverRemove}}"
+                        ]
+                    }
+                ],
+                "footer": {
+                    "text": "Server ID: {{SERVER_ID}}"
+                }
+            },
+            "settingsBot": {
+                "title": "Bot instellingen",
+                "description": [
+                    "{{REF:partials.italicizedDefaults}}",
+                    "",
+                    "{{SETTING_LIST}}",
+                    "\u2800"
+                ],
+                "fields": [
+                    {
+                        "name": "{{REF:fields.actions}}",
+                        "value": [
+                            "`/{{COM:chatCommands.bot}} {{COM:subCommands.edit}} <{{COM:arguments.bot}}> <{{COM:arguments.setting}}>` - {{REF:commandDescs.botEdit}}",
+                            "`/{{COM:chatCommands.bot}} {{COM:subCommands.remove}} <{{COM:arguments.bot}}>` - {{REF:commandDescs.botRemove}}"
+                        ]
+                    }
+                ],
+                "footer": {
+                    "text": "Bot ID: {{BOT_ID}}"
+                }
+            },
+            "settingSelf": {
+                "title": "instellingen",
+                "description": [
+                    "{{REF:partials.italicizedDefaults}}",
+                    "",
+                    "{{SETTING_LIST}}",
+                    "\u2800"
+                ],
+                "fields": [
+                    {
+                        "name": "{{REF:fields.actions}}",
+                        "value": [
+                            "`/{{COM:chatCommands.me}} {{COM:subCommands.edit}} <{{COM:arguments.setting}}>` - {{REF:commandDescs.meEdit}}",
+                            "`/{{COM:chatCommands.me}} {{COM:subCommands.remove}}` - {{REF:commandDescs.meRemove}}"
+                        ]
+                    }
+                ],
+                "footer": {
+                    "text": "User ID: {{USER_ID}}"
+                }
+            },
+            "timeServer": {
+                "title": "Server tijd",
+                "description": "Het is op dit moment **{{TIME}}** uur voor de server in **{{TIME_ZONE}}**."
+            },
+            "timeUser": {
+                "title": "Gebruiker tijd",
+                "description": "Het is op dit moment **{{TIME}}** uur voor {{USER}} in **{{TIME_ZONE}}**."
+            },
+            "timeUserPrivate": {
+                "title": "Gebruiker tijd",
+                "description": "Het is op dit moment **{{TIME}}** uur voor {{USER}}."
+            },
+            "timeTimeZone": {
+                "title": "Tijdzone tijd",
+                "description": "Het is op dit moment **{{TIME}}** uur in **{{TIME_ZONE}}**."
+            },
+            "about": {
+                "title": "{{COM:bot.name}} - About",
+                "description": "{{REF:bot.description}}",
+                "fields": [
+                    {
+                        "name": "Auteur",
+                        "value": "{{REF:links.authorEmbed}}"
+                    },
+                    {
+                        "name": "{{REF:fields.links}}",
+                        "value": [
+                            "{{REF:links.sourceEmbed}}",
+                            "{{REF:links.docsEmbed}}",
+                            "{{REF:links.voteEmbed}}",
+                            "{{REF:links.donateEmbed}}",
+                            "{{REF:links.supportEmbed}}",
+                            "{{REF:links.inviteEmbed}}"
+                        ]
+                    },
+                    {
+                        "name": "Gemaakt met",
+                        "value": ["{{REF:links.templateEmbed}}"]
+                    }
+                ]
+            },
+            "translate": {
+                "title": "{{COM:bot.name}} - Vertalingen",
+                "description": "Dank aan onze vertalers die het mogelijk hebben gemaakt voor {{COM:bot.name}} om in de volgende talen gebruikt te worden. Als je interesse hebt in het aanleveren van een vertaling, neem dan alstublieft contact op met het beheerders-team in onze [support server]({{COM:links.support}})."
+            },
+            "dev": {
+                "title": "{{COM:bot.name}} - Ontwikkelaarsinformatie",
+                "fields": [
+                    {
+                        "name": "Versies",
+                        "value": [
+                            "**Node.js**: {{NODE_VERSION}}",
+                            "**TypeScript**: {{TS_VERSION}}",
+                            "**ECMAScript**: {{ES_VERSION}}",
+                            "**discord.js**: {{DJS_VERSION}}"
+                        ]
+                    },
+                    {
+                        "name": "Statistieken",
+                        "value": [
+                            "**Shards**: {{SHARD_COUNT}}",
+                            "**Servers**: {{SERVER_COUNT}} ({{SERVER_COUNT_PER_SHARD}}/Shard)"
+                        ]
+                    },
+                    {
+                        "name": "Geheugen",
+                        "value": [
+                            "**RSS**: {{RSS_SIZE}} ({{RSS_SIZE_PER_SERVER}}/Server)",
+                            "**Heap**: {{HEAP_TOTAL_SIZE}} ({{HEAP_TOTAL_SIZE_PER_SERVER}}/Server)",
+                            "**Used**: {{HEAP_USED_SIZE}} ({{HEAP_USED_SIZE_PER_SERVER}}/Server)"
+                        ]
+                    },
+                    {
+                        "name": "IDs",
+                        "value": [
+                            "**Hostname**: {{HOSTNAME}}",
+                            "**Shard ID**: {{SHARD_ID}}",
+                            "**Server ID**: {{SERVER_ID}}",
+                            "**Bot ID**: {{BOT_ID}}",
+                            "**User ID**: {{USER_ID}}"
+                        ]
+                    }
+                ]
+            },
+            "linkMap": {
+                "title": "Tijdzone kaart",
+                "description": [
+                    "{{REF:partials.findTimeZoneHelp}} Je kunt deze naam kopieren en gebruiken wanneer {{COM:bot.name}} een tijdzone nodig heeft."
+                ]
+            },
+            "timeConversionDm": {
+                "description": [
+                    "{{USER}} heeft de volgende tijden benoemd in {{CHANNEL}}.",
+                    "",
+                    "{{TIME_ZONE_FROM}} ➡️ **{{TIME_ZONE_TO}}**",
+                    "",
+                    "{{TIME_LIST}}",
+                    "",
+                    "[Bekijk oorspronkelijke bericht]({{MESSAGE_LINK}})"
+                ]
+            },
+            "timeConversionGuild": {
+                "description": ["***{{TIME_ZONE_FROM}}***", "{{TIME_TEXT_LIST}}", ""]
+            },
+            "timeZoneReminder": {
+                "description": [
+                    "Hoi {{USER}}, het lijkt erop dat je hebt [benoemd of gereageerd op een tijd]({{MESSAGE_LINK}}) zonder een tijdzone ingesteld te hebben.",
+                    "",
+                    "Stel je tijdzone in door het `/{{COM:chatCommands.set}} {{COM:subCommands.me}}` commando te gebruiken!",
+                    "",
+                    "Het instellen van je tijdzone zorgt ervoor dat {{COM:bot.name}} tijden in server chats kan converteren van en naar jouw tijdzone, waardoor het makkelijker wordt om tijden te coördineren met anderen."
+                ],
+                "footer": {
+                    "text": "Als je deze herinnering wil uitschakelen, schrijf \"/{{COM:chatCommands.me}} {{COM:subCommands.edit}} {{COM:arguments.setting}}:{{COM:settings.reminders}}\"."
+                },
+                "color": "{{COM:colors.warning}}"
+            }
+        },
+        "promptEmbeds": {
+            "autoDetectGuild": {
+                "title": "Server - {{REF:settings.autoDetect}}",
+                "description": [
+                    "Wil je dat {{COM:bot.name}} automatisch tijden detecteerd in de chat?",
+                    "",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yes}}. Tijden in de chat worden automatisch gedetecteerd.",
+                    "",
+                    "`{{COM:yesNo.no}}` - {{REF:yesNo.no}}. Tijden in de chat worden **niet** automatisch gedetecteerd. Om een tijd te herkennen en converteren moet er een 🕰️ emoji aanwezig zijn in een bericht.",
+                    "\u2800"
+                ],
+                "footer": {
+                    "text": "{{REF:footers.collector}}"
+                }
+            },
+            "timeZoneGuild": {
+                "title": "Server - {{REF:settings.timeZone}}",
+                "description": [
+                    "In welke tijdzone bevindt de server zich?",
+                    "",
+                    "{{REF:partials.findTimeZoneHelp}}",
+                    "",
+                    "Voorbeeld: `America/New_York`"
+                ],
+                "footer": {
+                    "text": "{{REF:footers.collector}}"
+                }
+            },
+            "timeZoneBot": {
+                "title": "Bot - {{REF:settings.timeZone}}",
+                "description": [
+                    "In welke tijdzone bevindt {{BOT}} zich?",
+                    "",
+                    "{{REF:partials.findTimeZoneHelp}}",
+                    "",
+                    "Voorbeeld: `America/New_York`"
+                ],
+                "footer": {
+                    "text": "{{REF:footers.collector}}"
+                }
+            },
+            "timeZoneSelf": {
+                "title": "Gebruiker - {{REF:settings.timeZone}}",
+                "description": [
+                    "In welke tijdzone bevind je je?",
+                    "",
+                    "{{REF:partials.findTimeZoneHelp}}",
+                    "",
+                    "Voorbeeld: `America/New_York`"
+                ],
+                "footer": {
+                    "text": "{{REF:footers.collector}}"
+                }
+            },
+            "timeZoneUser": {
+                "title": "Gebruiker - {{REF:settings.timeZone}}",
+                "description": [
+                    "In welke tijdzone bevindt {{USER}} zich?",
+                    "",
+                    "{{REF:partials.findTimeZoneHelp}}",
+                    "",
+                    "Voorbeeld: `America/New_York`"
+                ],
+                "footer": {
+                    "text": "{{REF:footers.collector}}"
+                }
+            },
+            "timeZoneConfirmGuild": {
+                "description": [
+                    "{{REF:partials.timeInTimeZone}}",
+                    "",
+                    "Is dit de tijdzone van de server?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
+                ],
+                "footer": {
+                    "text": "{{REF:footers.collector}}"
+                }
+            },
+            "timeZoneConfirmBot": {
+                "description": [
+                    "{{REF:partials.timeInTimeZone}}",
+                    "",
+                    "Is dit de tijdzone van {{BOT}}?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
+                ],
+                "footer": {
+                    "text": "{{REF:footers.collector}}"
+                }
+            },
+            "timeZoneConfirmSelf": {
+                "description": [
+                    "{{REF:partials.timeInTimeZone}}",
+                    "",
+                    "Is dit jouw tijdzone?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
+                ],
+                "footer": {
+                    "text": "{{REF:footers.collector}}"
+                }
+            },
+            "timeZoneConfirmUser": {
+                "description": [
+                    "{{REF:partials.timeInTimeZone}}",
+                    "",
+                    "Is dit de tijdzone van {{USER}}?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
+                ],
+                "footer": {
+                    "text": "{{REF:footers.collector}}"
+                }
+            },
+            "listGuild": {
+                "title": "Server - {{REF:settings.list}}",
+                "description": [
+                    "Wil je dat {{COM:bot.name}} een lijst met geconverteerde tijden stuurt in de chat wanneer er een tijd wordt benoemd?",
+                    "",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yes}}. {{COM:bot.name}} zal in de chat benoemde tijden converteren naar alle tijdzones in de serverlijst (`/{{COM:chatCommands.list}} {{COM:subCommands.view}}`). Deze lijst zal verstuurd worden in hetzelfde kanaal als het originele bericht.",
+                    "",
+                    "`{{COM:yesNo.no}}` - {{REF:yesNo.no}}. Er wordt geen lijst getoond.",
+                    "\u2800"
+                ],
+                "footer": {
+                    "text": "{{REF:footers.collector}}"
+                }
+            },
+            "remindersGuild": {
+                "title": "Server - {{REF:settings.reminders}}",
+                "description": [
+                    "Wil je dat gebruikers eraan herinnerd worden om hun tijdzone in te stellen?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
+                ],
+                "footer": {
+                    "text": "{{REF:footers.collector}}"
+                }
+            },
+            "remindersUser": {
+                "title": "Gebruiker - {{REF:settings.reminders}}",
+                "description": [
+                    "Wil je dat jij eraan herinnerd wordt om je tijdzone in te stellen?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
+                ],
+                "footer": {
+                    "text": "{{REF:footers.collector}}"
+                }
+            },
+            "dateFormatBot": {
+                "title": "Bot - {{REF:settings.dateFormat}}",
+                "description": [
+                    "Welk formaat gebruikt {{BOT}} het meest voor datums?",
+                    "",
+                    "`{{COM:dateFormat.monthDay}}` - {{REF:dateFormat.monthDay}}",
+                    "",
+                    "`{{COM:dateFormat.dayMonth}}` - {{REF:dateFormat.dayMonth}}",
+                    "\u2800"
+                ],
+                "footer": {
+                    "text": "{{REF:footers.collector}}"
+                }
+            },
+            "dateFormatUser": {
+                "title": "Gebruiker - {{REF:settings.dateFormat}}",
+                "description": [
+                    "Welk formaat gebruik jij het meest voor datums?",
+                    "",
+                    "`{{COM:dateFormat.monthDay}}` - {{REF:dateFormat.monthDay}}",
+                    "",
+                    "`{{COM:dateFormat.dayMonth}}` - {{REF:dateFormat.dayMonth}}",
+                    "\u2800"
+                ],
+                "footer": {
+                    "text": "{{REF:footers.collector}}"
+                }
+            },
+            "timeFormatGuild": {
+                "title": "Server - {{REF:settings.timeFormat}}",
+                "description": [
+                    "Welk formaat moet er gebruikt worden voor het verzenden van tijden in deze server?",
+                    "",
+                    "`{{COM:timeFormat.twelveHour}}` - {{REF:timeFormat.twelveHour}}",
+                    "",
+                    "`{{COM:timeFormat.twentyFourHour}}` - {{REF:timeFormat.twentyFourHour}}",
+                    "\u2800"
+                ],
+                "footer": {
+                    "text": "{{REF:footers.collector}}"
+                }
+            },
+            "timeFormatUser": {
+                "title": "Gebruiker - {{REF:settings.timeFormat}}",
+                "description": [
+                    "Welk formaat heeft jouw voorkeur?",
+                    "",
+                    "`{{COM:timeFormat.twelveHour}}` - {{REF:timeFormat.twelveHour}}",
+                    "",
+                    "`{{COM:timeFormat.twentyFourHour}}` - {{REF:timeFormat.twentyFourHour}}",
+                    "\u2800"
+                ],
+                "footer": {
+                    "text": "{{REF:footers.collector}}"
+                }
+            },
+            "privateModeUser": {
+                "title": "Gebruiker - {{REF:settings.privateMode}}",
+                "description": [
+                    "Wil je dat jouw tijdzone en andere gevevens privé blijven?",
+                    "",
+                    "`{{COM:yesNo.yes}}` - {{REF:yesNo.yes}}. {{COM:bot.name}} zal jouw gegevens niet delen met andere gebruikers.",
+                    "",
+                    "`{{COM:yesNo.no}}` - {{REF:yesNo.no}}. Ik vind het goed om mijn gegevens te delen.",
+                    "\u2800"
+                ],
+                "footer": {
+                    "text": "{{REF:footers.collector}}"
+                }
+            },
+            "languageGuild": {
+                "title": "Server - {{REF:settings.language}}",
+                "description": [
+                    "Welke taal wil je gebruiken in deze server?",
+                    "",
+                    "{{LANGUAGE_LIST}}",
+                    "",
+                    "*Let op: gebruikers kunnen dit overschrijven met hun eigen taal. {{REF:partials.translateNote}}*"
+                ],
+                "footer": {
+                    "text": "{{REF:footers.collector}}"
+                }
+            },
+            "languageUser": {
+                "title": "Gebruiker - {{REF:settings.language}}",
+                "description": [
+                    "Welke taal wil je gebruiken?",
+                    "",
+                    "{{LANGUAGE_LIST}}",
+                    "",
+                    "*{{REF:partials.translateNote}}*"
+                ],
+                "footer": {
+                    "text": "{{REF:footers.collector}}"
+                }
+            },
+            "setConfirmUser": {
+                "description": [
+                    "{{SETTING_LIST}}",
+                    "",
+                    "{{USER}}, bevestig of je deze instellingen wil gebruiken?",
+                    "",
+                    "{{REF:partials.yesOrNo}}",
+                    "\u2800"
+                ],
+                "footer": {
+                    "text": "{{REF:footers.collector}}"
+                }
+            }
+        },
+        "resultEmbeds": {
+            "collectorExpired": {
+                "description": "Je verzoek is verlopen. Probeer het opnieuw.",
+                "color": "{{COM:colors.warning}}"
+            },
+            "setupCompleted": {
+                "description": [
+                    "{{REF:partials.congratulations}}",
+                    "",
+                    "De server setup is voltooid!",
+                    "",
+                    "{{SETTING_LIST}}",
+                    "\u2800"
+                ],
+                "fields": [
+                    {
+                        "name": "{{REF:fields.actions}}",
+                        "value": [
+                            "`/{{COM:chatCommands.server}} {{COM:subCommands.view}}` - {{REF:commandDescs.serverView}}"
+                        ]
+                    }
+                ],
+                "color": "{{COM:colors.success}}"
+            },
+            "setCompletedSelf": {
+                "description": [
+                    "{{REF:partials.congratulations}}",
+                    "",
+                    "De gebruiker setup is voltooid!",
+                    "",
+                    "*Let op: {{REF:partials.dmWarning}}*",
+                    "",
+                    "{{SETTING_LIST}}",
+                    "\u2800"
+                ],
+                "fields": [
+                    {
+                        "name": "{{REF:fields.actions}}",
+                        "value": [
+                            "`/{{COM:chatCommands.me}} {{COM:subCommands.view}}` - {{REF:commandDescs.meView}}"
+                        ]
+                    }
+                ],
+                "color": "{{COM:colors.success}}"
+            },
+            "setCompletedUser": {
+                "description": [
+                    "{{REF:partials.congratulations}}",
+                    "",
+                    "De gebruiker setup is voltooid!",
+                    "",
+                    "*Let op: {{REF:partials.dmWarning}}*",
+                    "",
+                    "{{SETTING_LIST}}",
+                    "\u2800"
+                ],
+                "fields": [
+                    {
+                        "name": "{{REF:fields.actions}}",
+                        "value": [
+                            "`/{{COM:chatCommands.me}} {{COM:subCommands.view}}` - {{REF:commandDescs.meView}}"
+                        ]
+                    }
+                ],
+                "color": "{{COM:colors.success}}"
+            },
+            "setCompletedBot": {
+                "description": [
+                    "{{REF:partials.congratulations}}",
+                    "",
+                    "De bot setup is voltooid",
+                    "",
+                    "{{SETTING_LIST}}",
+                    "\u2800"
+                ],
+                "fields": [
+                    {
+                        "name": "{{REF:fields.actions}}",
+                        "value": [
+                            "`/{{COM:chatCommands.bot}} {{COM:subCommands.view}} <{{COM:arguments.bot}}>` - {{REF:commandDescs.botView}}"
+                        ]
+                    }
+                ],
+                "color": "{{COM:colors.success}}"
+            },
+            "setDeniedUser": {
+                "description": "Gebruiker setup geweigerd. Je instellingen zijn niet veranderd.",
+                "color": "{{COM:colors.error}}"
+            },
+            "updatedSettingGuild": {
+                "description": "De server's**{{SETTING_NAME}}** instelling is veranderd naar **{{SETTING_VALUE}}**.",
+                "color": "{{COM:colors.success}}"
+            },
+            "updatedSettingBot": {
+                "description": "{{BOT}}'s **{{SETTING_NAME}}** instelling is veranderd naar **{{SETTING_VALUE}}**.",
+                "color": "{{COM:colors.success}}"
+            },
+            "updatedSettingUser": {
+                "description": "Jouw **{{SETTING_NAME}}** instelling is veranderd naar **{{SETTING_VALUE}}**.",
+                "color": "{{COM:colors.success}}"
+            },
+            "removedSettingGuild": {
+                "description": "De server's **{{SETTING_NAME}}** instelling is verwijderd.",
+                "color": "{{COM:colors.success}}"
+            },
+            "removedSettingBot": {
+                "description": "{{BOT}}'s **{{SETTING_NAME}}** instelling is verwijderd.",
+                "color": "{{COM:colors.success}}"
+            },
+            "removedSettingUser": {
+                "description": "Jouw **{{SETTING_NAME}}** instelling is verwijderd",
+                "color": "{{COM:colors.success}}"
+            },
+            "removedGuild": {
+                "description": "De gegevens van deze server zijn verwijderd.",
+                "color": "{{COM:colors.success}}"
+            },
+            "removedBot": {
+                "description": "De gegevens van {{BOT}} zijn verwijderd.",
+                "color": "{{COM:colors.success}}"
+            },
+            "removedUser": {
+                "description": "Jouw gegevens zijn verwijderd.",
+                "color": "{{COM:colors.success}}"
+            },
+            "addedListItem": {
+                "description": "**{{TIME_ZONE}}** is toegevoegd aan de lijst met tijdzones van de server.",
+                "color": "{{COM:colors.success}}"
+            },
+            "removedListItem": {
+                "description": "**{{TIME_ZONE}}** is verwijdered van de lijst met tijdzones van de server.",
+                "color": "{{COM:colors.success}}"
+            }
+        },
+        "validationEmbeds": {
+            "oldPrefixUsed": {
+                "title": "Slashopdrachten Update",
+                "description": [
+                    "{{COM:bot.name}} now uses **Slash Commands**! Try it by typing `/{{COM:chatCommands.help}}`!",
+                    "",
+                    "If you don't see any slash commands listed for {{COM:bot.name}}:",
+                    "",
+                    "1. Check that you have the **Use Application Commands** permission in this channel.",
+                    "2. Try kicking and [re-inviting {{COM:bot.name}}]({{COM:links.invite}}).",
+                    "3. Join our [support server]({{COM:links.support}}) for help."
+                ],
+                "image": "{{COM:images.helpCommand}}",
+                "color": "{{COM:colors.warning}}"
+            },
+            "cooldownHit": {
+                "description": "You can only run this command {{AMOUNT}} time(s) every {{INTERVAL}}. Please wait before attempting this command again.",
+                "color": "{{COM:colors.warning}}"
+            },
+            "devOnly": {
+                "description": "This action can only be done by developers.",
+                "color": "{{COM:colors.warning}}"
+            },
+            "serverOnlyCommand": {
+                "description": "Dit commando kan alleen gebruikt worden in een server.",
+                "color": "{{COM:colors.warning}}"
+            },
+            "missingClientPerms": {
+                "description": [
+                    "I don't have all permissions required to run that command here! Please check the server and channel permissions to make sure I have the following permissions.",
+                    "",
+                    "Required permissions: {{PERMISSIONS}}"
+                ],
+                "color": "{{COM:colors.warning}}"
+            },
+            "missingUserPerms": {
+                "description": "Je hebt geen toestemming om dat commando te gebruiken!",
+                "color": "{{COM:colors.warning}}"
+            },
+            "notFoundSetting": {
+                "description": "Instellingen niet gevonden.",
+                "color": "{{COM:colors.error}}"
+            },
+            "notFoundBot": {
+                "description": [
+                    "Bot is niet gevonden of nog niet ingesteld.",
+                    "",
+                    "Schrijf `/{{COM:chatCommands.set}} {{COM:subCommands.user}} <{{COM:arguments.bot}}>` om een nieuwe bot in te stellen."
+                ],
+                "color": "{{COM:colors.error}}"
+            },
+            "notFoundUser": {
+                "description": "Gebruiker niet gevonden.",
+                "color": "{{COM:colors.error}}"
+            },
+            "invalidTimeZone": {
+                "description": "Ongeldige tijdzone, probeer het opnieuw!",
+                "color": "{{COM:colors.error}}"
+            },
+            "invalidDateFormat": {
+                "description": "Ongeldige datum formaat, probeer het opnieuw!",
+                "color": "{{COM:colors.error}}"
+            },
+            "invalidTimeFormat": {
+                "description": "Ongeldige tijd formaat, probeer het opnieuw!",
+                "color": "{{COM:colors.error}}"
+            },
+            "invalidYesNo": {
+                "description": "Ongeldig ja of nee antwoord, probeer het opnieuw!",
+                "color": "{{COM:colors.error}}"
+            },
+            "invalidLanguage": {
+                "description": "Ongeldige taal, probeer het opnieuw!",
+                "color": "{{COM:colors.error}}"
+            },
+            "privateModeEnabled": {
+                "description": [
+                    "Je hebt privémodus aan staan!",
+                    "",
+                    "Gebruik dit commando opnieuw in een DM zodat je je gegevens niet blootstelt."
+                ],
+                "color": "{{COM:colors.warning}}"
+            },
+            "notAllowedAbbreviation": {
+                "description": "Afkortingen van tijdzones zijn niet toegestaan, probeer het opnieuw!",
+                "color": "{{COM:colors.warning}}"
+            },
+            "notAllowedSetClient": {
+                "description": "Je hebt geen toestemming om {{COM:bot.name}} in te stellen!",
+                "color": "{{COM:colors.warning}}"
+            },
+            "maxLimitList": {
+                "description": "Deze server heeft al het maximum aantal tijdzones in de lijst!",
+                "color": "{{COM:colors.warning}}"
+            },
+            "maxLimitBots": {
+                "description": "Deze server heeft al het maximum aantal ingestelde bots!",
+                "color": "{{COM:colors.warning}}"
+            },
+            "noTimeZoneServer": {
+                "description": "De server heeft nog geen tijdzone ingesteld!",
+                "color": "{{COM:colors.warning}}"
+            },
+            "noTimeZoneUser": {
+                "description": "{{USER}} heeft nog geen tijdzone ingesteld!",
+                "color": "{{COM:colors.warning}}"
+            }
+        },
+        "errorEmbeds": {
+            "command": {
+                "description": "Er ging iets fout!",
+                "fields": [
+                    {
+                        "name": "Fout code",
+                        "value": "{{ERROR_CODE}}"
+                    },
+                    {
+                        "name": "Server ID",
+                        "value": "{{GUILD_ID}}"
+                    },
+                    {
+                        "name": "Shard ID",
+                        "value": "{{SHARD_ID}}"
+                    },
+                    {
+                        "name": "Contacteer support",
+                        "value": "{{COM:links.support}}"
+                    }
+                ],
+                "color": "{{COM:colors.error}}"
+            },
+            "startupInProcess": {
+                "description": "{{COM:bot.name}} is nog aan het opstarten. Probeer het later nog eens.",
+                "color": "{{COM:colors.warning}}"
+            },
+            "notImplemented": {
+                "description": "This feature has not been implemented yet!",
+                "color": "{{COM:colors.warning}}"
+            }
+        },
+        "channelRegexes": {
+            "bot": "/bot|command|cmd/i"
+        }
+    },
+    "refs": {
+        "meta": {
+            "translators": "[Hester#5259](https://github.com/uxster)"
+        },
+        "bot": {
+            "description": "{{COM:bot.name}} helpt het coördineren van tijden en evenementen in jouw server door tijden in chatberichten te converteren naar verschillende tijdzones!"
+        },
+        "commandDescs": {
+            "bot": "Beheer botinstellingen.",
+            "botList": "Bekijk lijst van bots.",
+            "botView": "Bekijk een instelling van de bot.",
+            "botEdit": "Verander een instelling van de bot.",
+            "botRemove": "Verwijder een bot.",
+            "help": "Get help with commands, permissions, FAQ, etc.",
+            "info": "Bekijk informatie over de bot.",
+            "list": "Beheer de lijst met tijdzones van de server.",
+            "listView": "Bekijk de lijst met tijdzones van de server.",
+            "listToggle": "Dingen verwijderen of toevoegen van de lijst met tijdzones van de server.",
+            "map": "Bekijk de tijdzone kaart.",
+            "me": "Beheer je gebruikersinstellingen.",
+            "meView": "Bekijk je gebruikersintstellingen.",
+            "meEdit": "Verander een gebruikersinstelling.",
+            "meRemove": "Verwijder alle gebruikersdata.",
+            "server": "Beheer serverinstellingen.",
+            "serverView": "Bekijk serverinstellingen.",
+            "serverEdit": "Verander een serverinstelling.",
+            "serverRemove": "Verwijder alle serverdata.",
+            "set": "Doe de gebruiker setup (voor jezelf, een gebruiker of een bot).",
+            "setMe": "Doe de gebruiker setup voor jezelf.",
+            "setUser": "Doe de gebruiker setup voor een gebruiker of een bot.",
+            "setup": "Doe de gebruiker setup.",
+            "time": "Bekijk de tijd van de server, een gebruiker, een bot of een tijdzone.",
+            "timeServer": "Bekijk de tijd van de server.",
+            "timeUser": "Bekijk de tijd van een gebruiker of bot.",
+            "timeZone": "Bekijk de tijd van een tijdzone."
+        },
+        "settings": {
+            "autoDetect": "Auto-detecteer",
+            "dateFormat": "Datumformaat",
+            "language": "Taal",
+            "list": "Lijst",
+            "privateMode": "Privémodus",
+            "reminders": "Herinneringen",
+            "timeFormat": "Tijdsformaat",
+            "timeZone": "Tijdzone"
+        },
+        "dateFormat": {
+            "monthDay": "Maand/Dag",
+            "dayMonth": "Dag/Maand"
+        },
+        "timeFormat": {
+            "twelveHour": "12-uur",
+            "twentyFourHour": "24-uur"
+        },
+        "yesNo": {
+            "yes": "Ja",
+            "no": "Nee"
+        },
+        "argDescs": {
+            "helpOption": "Option.",
+            "infoOption": "Option."
+        },
+        "lists": {
+            "settingItem": [
+                "**{{SETTING_NAME}}** (`{{SETTING_KEYWORD}}`):",
+                "{{SETTING_VALUE}}",
+                ""
+            ],
+            "timeZoneItem": "- **{{TIME_ZONE}}**",
+            "timeZoneNone": "*Deze server heeft nog geen tijdzones in de lijst.*",
+            "botItem": "- {{BOT}}",
+            "botNone": "*Deze server heeft nog geen bots ingesteld.*",
+            "timeTextItem": "> {{TIME_TEXT}}",
+            "timeTextWithPosItem": "> **{{POSITION}}**. {{TIME_TEXT}}",
+            "timeTextAndTimeItem": ["> {{TIME_TEXT}}", "**{{TIME_START}}**", ""],
+            "timeTextAndTimeWithEndItem": [
+                "> {{TIME_TEXT}}",
+                "**{{TIME_START}}** - **{{TIME_END}}**",
+                ""
+            ],
+            "timeItem": "{{TIME_START}}",
+            "timeWithEndItem": "{{TIME_START}} - {{TIME_END}}",
+            "timeWithPosItem": "**{{POSITION}}**. {{TIME_START}}",
+            "timeWithPosAndEndItem": "**{{POSITION}}**. {{TIME_START}} - {{TIME_END}}"
+        },
+        "fields": {
+            "commands": "Commando's",
+            "actions": "Acties",
+            "links": "Links"
+        },
+        "footers": {
+            "collector": "Schrijf je antwoord hier beneden (of schrijf '{{COM:keywords.stop}}' om te annuleren)."
+        },
+        "permissions": {
+            "AddReactions": "Add Reactions",
+            "Administrator": "Administrator",
+            "AttachFiles": "Attach Files",
+            "BanMembers": "Ban Members",
+            "ChangeNickname": "Change Nickname",
+            "Connect": "Connect",
+            "CreateInstantInvite": "Create Invite",
+            "CreatePrivateThreads": "Create Private Threads",
+            "CreatePublicThreads": "Create Public Threads",
+            "DeafenMembers": "Deafen Members",
+            "EmbedLinks": "Embed Links",
+            "KickMembers": "Kick Members",
+            "ManageChannels": "Manage Channel(s)",
+            "ManageEmojisAndStickers": "Manage Emoji and Stickers",
+            "ManageEvents": "Manage Events",
+            "ManageGuild": "Manage Server",
+            "ManageMessages": "Manage Messages",
+            "ManageNicknames": "Manage Nicknames",
+            "ManageRoles": "Manage Roles / Permissions",
+            "ManageThreads": "Manage Threads / Posts",
+            "ManageWebhooks": "Manage Webhooks",
+            "MentionEveryone": "Mention Everyone, Here, and All Roles",
+            "ModerateMembers": "Timeout Members",
+            "MoveMembers": "Move Members",
+            "MuteMembers": "Mute Members",
+            "PrioritySpeaker": "Priority Speaker",
+            "ReadMessageHistory": "Read Message History",
+            "RequestToSpeak": "Request to Speak",
+            "SendMessages": "Send Messages / Create Posts",
+            "SendMessagesInThreads": "Send Messages in Threads / Posts",
+            "SendTTSMessages": "Send Text-to-Speech Messages",
+            "Speak": "Speak",
+            "Stream": "Video",
+            "UseApplicationCommands": "Use Application Commands",
+            "UseEmbeddedActivities": "Use Activities",
+            "UseExternalEmojis": "Use External Emoji",
+            "UseExternalStickers": "Use External Stickers",
+            "UseVAD": "Use Voice Activity",
+            "ViewAuditLog": "View Audit Log",
+            "ViewChannel": "View Channel(s)",
+            "ViewGuildInsights": "View Server Insights"
+        },
+        "helpOptions": {
+            "commands": "Commands",
+            "permissions": "Permissions",
+            "faq": "FAQ"
+        },
+        "infoOptions": {
+            "about": "About",
+            "translate": "Translate",
+            "dev": "Dev"
+        },
+        "boolean": {
+            "true": "True",
+            "false": "False"
+        },
+        "other": {
+            "na": "N.v.t.",
+            "private": "Privé"
+        },
+        "links": {
+            "authorEmbed": "[{{COM:bot.author}}]({{COM:links.author}})",
+            "docsEmbed": "[Bekijk documentatie en instructies]({{COM:links.docs}}/)",
+            "donateEmbed": "[Donate via PayPal]({{COM:links.donate}})",
+            "inviteEmbed": "[Nodig {{COM:bot.name}} uit in een server!]({{COM:links.invite}})",
+            "mapEmbed": "[Tijdzone kaart]({{COM:links.map}})",
+            "sourceEmbed": "[Bekijk broncode]({{COM:links.source}})",
+            "supportEmbed": "[Wordt lid van de support server]({{COM:links.support}})",
+            "templateEmbed": "[Discord Bot TypeScript Template]({{COM:links.template}})",
+            "voteEmbed": "[Stem op {{COM:bot.name}}!]({{COM:links.vote}})"
+        },
+        "partials": {
+            "congratulations": "🎉 Gefeliciteerd! 🎉",
+            "yesOrNo": [
+                "`{{COM:yesNo.yes}}` - {{REF:yesNo.yes}}",
+                "",
+                "`{{COM:yesNo.no}}` - {{REF:yesNo.no}}"
+            ],
+            "italicizedDefaults": "*Schuingedrukte* instellingen zijn standaarden.",
+            "timeInTimeZone": "In **{{TIME_ZONE}}** is het op dit moment **{{TIME_12_HOUR}}** / **{{TIME_24_HOUR}}** uur.",
+            "findTimeZoneHelp": [
+                "Je kunt tijdzones vinden op de __{{REF:links.mapEmbed}}__.",
+                "",
+                "Simpelweg **selecteer een locatie op de kaart** om de naam van een tijdzone te zien."
+            ],
+            "translateNote": "Schrijf `/{{COM:chatCommands.info}} {{COM:arguments.option}}:{{REF:infoOptions.translate}}` om meer te weten te komen over vertalingen.",
+            "dmWarning": "Sommige commando's van {{COM:bot.name}} vereisen dat de bot DMs kan versturen. Dit moet in tenminste één server die je deelt met {{COM:bot.name}} ingesteld zijn."
+        }
+    }
+}
